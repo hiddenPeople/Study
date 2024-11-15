@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hr SYSTEM "hr.dtd">
+<!--公司员工数据-->
+<hr>
+    <employee no="0001">
+        <name>James</name>
+        <age>30</age>
+        <salary>5000</salary>
+        <department>
+            <dname>IT</dname>
+            <address>
+                <city>London</city>
+            </address>
+        </department>
+    </employee>
+    <employee no="0002">
+        <name>Mary</name>
+        <age>28</age>
+        <salary>6000</salary>
+        <department>
+            <dname>HR</dname>
+            <address>
+                <city>New York</city>
+            </address>
+        </department>
+    </employee>
+</hr>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--公司员工数据-->
+<!--第一个xmlns是自己在XSD中写的命名空间，-->
+<!--第二个xmlns:xsi是XML Schema Instance，用来指定XML实例文档的XML Schema。是W3C指定的schema用来加载本地的XSD文件-->
+<!--第三个xmlns:第一个参数是本地xsd的命名空间，第二个参数则是本地HR.xsd文件的名称-->
+<hr xmlns="http://www.example.org/hr"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.example.org/hr hr.xsd">
+    <employee no="0001">
+        <name>James</name>
+        <age>30</age>
+        <salary>5000</salary>
+        <department>
+            <dname>IT</dname>
+            <address>
+                <city>London</city>
+            </address>
+        </department>
+    </employee>
+    <employee no="0002">
+        <name>Mary</name>
+        <age>28</age>
+        <salary>6000</salary>
+        <department>
+            <dname>HR</dname>
+            <address>
+                <city>New York</city>
+            </address>
+        </department>
+    </employee>
+</hr>

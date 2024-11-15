@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--这是定死的标准,xmlns是一个约束，约束是hr.xsd文件，约束的根标签是schema-->
+<!--约束的命名空间是http://www.example.org/hr（命名空间必须是网址，可以是虚构的），这里可以不用写一个可以访问的地址-->
+<!--        elementFormDefault是一个全局的约束-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/hr"
+        elementFormDefault="qualified">
+    <!--    一个emement标签就是说明一个xml的标签，此时代表父标签-->
+    <element name="hr">
+        <!--        complexType代表复杂标签，说明该标签节点下还有其他子标签-->
+        <complexType>
+            <!--            代表该标签下子标签的顺序，通常与complexType配合使用-->
+            <sequence>
+                <!--                默认是string，minOccurs代表该标签最少出现的次数，maxOccurs代表最多出现的次数-->
+                <element name="employee" minOccurs="1" maxOccurs="99999">
+                    <complexType>
+                        <sequence>
+                            <!--                            type代表标签文本类型-->
+                            <element name="name" type="string"/>
+                            <element name="age">
+                                <!--                                simpleType代表简单类型-->
+                                <simpleType>
+                                    <!--                                    restriction代表约束-->
+                                    <restriction base="integer">
+                                        <!--                                        这是最小包含值包含18-->
+                                        <minInclusive value="18"/>
+                                        <!--                                        这是最大包含值包含65-->
+                                        <maxInclusive value="65"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="salary" type="integer"/>
+                            <element name="department">
+                                <complexType>
+                                    <sequence>
+                                        <element name="dname" type="string"/>
+                                        <element name="address">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="city" type="string"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                        <!--                        attribute代表属性标签，use代表属性是否必填-->
+                        <attribute name="no" type="string" use="required"/>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

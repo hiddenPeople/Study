@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+        <!--!ELEMENT是设置标签-->
+        <!ELEMENT hr (employee+)>
+        <!--子标签严格按照该顺序来-->
+        <!ELEMENT employee  (name,age,salary,department)>
+        <!--#PCDATA是设置标签的内容为文本格式-->
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT age (#PCDATA)>
+        <!ELEMENT salary (#PCDATA)>
+        <!ELEMENT department (dname,address)>
+        <!ELEMENT dname (#PCDATA)>
+        <!ELEMENT address (city)>
+        <!ELEMENT city (#PCDATA)>
+        <!--!ATTLIST设置标签属性-->
+        <!ATTLIST employee no CDATA "">
